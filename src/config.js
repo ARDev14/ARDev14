@@ -5,8 +5,8 @@ import { Icon } from "@iconify/react";
 // import newLogo from "./images/yourFileName"
 
 // Hero Images (add your images to the /images directory with the same names)
-import HeroLight from "./images/hero-light.jpg";
-import HeroDark from "./images/hero-dark.jpg";
+import HeroLight from "./images/light.jpg";
+import HeroDark from "./images/dark.jpg";
 
 // Projects Images (add your images to the images directory and import below)
 import Logo from "./images/logo.svg";
@@ -35,8 +35,7 @@ export { HeroDark as Dark };
   Add a second paragraph for the about me section.
 */
 export const moreInfo =
-  "I enjoy learning about technology and helping others use it to improve their lives and be more productive. I built this site with React, React Bootstrap, Redux, and the GitHub REST API.";
-
+  "I am passionate about leveraging technology 💻 to create innovative solutions that enhance user experiences and drive business success 🚀. My expertise spans various programming languages and frameworks, allowing me to tackle diverse projects with confidence 💪. I thrive in collaborative environments 🤝 and enjoy learning new skills 📚 to stay updated with industry trends. I'm excited about the opportunity to connect and collaborate with like-minded individuals!"
 /* Skills
  ************************************************************** 
   Add or remove skills in the SAME format below, choose icons here - https://icon-sets.iconify.design/
@@ -96,7 +95,7 @@ export const resume = null;
  ************************************************************** 
   List the repo names (string - "your-repo-name") you want to include (they will be sorted alphabetically). If empty, only the first 3 will be included.
 */
-export const filteredProjects = ["example-1", "example-2", "example-3"];
+export const filteredProjects = ["ARDev14", "example-2", "example-3"];
 
 // Replace the defualt GitHub image for matching repos below (images imported above - lines 7-8)
 export const projectCardImages = [

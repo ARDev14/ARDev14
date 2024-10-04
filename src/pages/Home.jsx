@@ -30,8 +30,8 @@ const Home = () => {
           bio={userData.bio}
           moreInfo={moreInfo}
         />
-        <Skills />
         <Projects filteredProjects={filteredProjects} />
+        <Skills />
         <Contact />
       </main>
       <BackToTop />

@@ -1,13 +1,14 @@
 import React from "react";
 // Styles
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, useTheme } from "styled-components"; // Import useTheme
 // State
 import PropTypes from "prop-types";
 // Icons
 import { Icon } from "@iconify/react";
 // Images
-import Logo from "../images/logo.svg";
-import { Light, Dark } from "../config";
+import Logo from "../images/about2.gif"; // Light theme logo
+import Logo2 from "../images/about3.gif"; // Dark theme logo
+import { Light, Dark } from "../config"; // Ensure these are imported as needed
 // Components
 import { useErrorBoundary } from "react-error-boundary";
 import { Link } from "react-scroll";
@@ -100,6 +101,10 @@ const propTypes = {
 
 const Hero = ({ name }) => {
   const { showBoundary } = useErrorBoundary();
+  const theme = useTheme(); // Access the theme here
+
+  // Determine which logo to use based on the current theme
+  const logoSrc = theme.name === "light" ? Logo : Logo2;
 
   return (
     <StyledHero>
@@ -115,9 +120,9 @@ const Hero = ({ name }) => {
           </Col>
           <Col className="d-none d-md-block">
             <img
-              src={Logo}
+              src={logoSrc} // Use the determined logo here
               alt="React Logo"
-              className="w-75 mx-auto hero-img"
+              className="w-100 mx-auto"
             />
           </Col>
         </Row>
