@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 // Router
 import { Link, useLocation } from "react-router-dom";
 // Images
-import defaultLogo from "../images/Profile..svg";
+import defaultLogo from "../images/Profile.jpg";
 // Components
 import { Link as ScrollLink } from "react-scroll";
 import { Container, Nav, Navbar } from "react-bootstrap";
