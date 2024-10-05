@@ -21,6 +21,36 @@ const Projects = () => {
   const projects = useSelector(selectProjects);
   const mainProjects = useSelector(selectMainProjects);
   const { isLoading, isSuccess, isError, error } = useGetProjectsQuery();
+
+  const nonGithubProjects = [
+    {
+      id: 1,
+      name: "Thriftops",
+      description: "This is a custom project not hosted on GitHub.",
+      image: "https://res.cloudinary.com/drdv5oubz/image/upload/v1728131516/image_wrsygo.png",
+      homepage: "https://app.thriftops.com",
+      html_url: "https://app.thriftops.com",
+    },
+    {
+      id: 2,
+      name: "My Vehicle Reports",
+      description: "Vehicle History Reports That You Can Rely On.",
+      image: "https://res.cloudinary.com/drdv5oubz/image/upload/v1728131636/image_zzbxww.png",
+      homepage: "https://www.myvehiclereports.com/",
+      html_url: "https://www.myvehiclereports.com/",
+    },
+    {
+      id: 3,
+      name: "AI Shoe Analyzer",
+      description: "Evaluate your preloved shoes.",
+      image: "http://sorter.thriftops.com/assets/img/expart/expart-2.jpg",
+      homepage: "http://sorter.thriftops.com/",
+      html_url: "http://sorter.thriftops.com/",
+    }
+  ];
+
+  let allProjects = [...nonGithubProjects]; // Merging arrays
+  
   let content;
 
   if (isLoading) {
@@ -37,10 +67,10 @@ const Projects = () => {
             Oops, you do not have any GitHub projects yet...
           </h2>
         )}
-        {mainProjects.length !== 0 && (
+        {allProjects.length !== 0 && (  // Use merged array here
           <>
             <Row xs={1} md={2} lg={3} className="g-4 justify-content-center">
-              {mainProjects.map((element) => {
+              {allProjects.map((element) => {
                 return (
                   <Col key={element.id}>
                     <ProjectCard
@@ -54,7 +84,7 @@ const Projects = () => {
                 );
               })}
             </Row>
-            {projects.length > 3 && (
+            {/* {projects.length > 3 && (
               <Container className="text-center mt-5">
                 <Link to="/All-Projects">
                   <Button
@@ -67,7 +97,7 @@ const Projects = () => {
                   </Button>
                 </Link>
               </Container>
-            )}
+            )} */}
           </>
         )}
       </>
@@ -87,12 +117,14 @@ const Projects = () => {
           <Container className="d-flex justify-content-center">
             <Title size={"h2"} text={"Projects"} />
           </Container>
+          <br/><br/>
           {content}
         </Container>
       </section>
     </Element>
   );
 };
+
 // #endregion
 
 export default Projects;

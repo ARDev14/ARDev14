@@ -22,10 +22,11 @@ const StyledCard = styled.div`
       theme.name === "light"
         ? "0 3px 10px rgb(0 0 0 / 0.2)"
         : "0 3px 10px rgb(255 255 255 / 0.2)"};
-
+    
     .card-img-top {
-      height: 50%;
-      object-fit: contain;
+      width: 100%; /* Make sure the image takes full width */
+      height: 300px; /* Set a fixed height, adjust as per your design */
+      object-fit: cover; /* Ensure the image covers the area without distortion */
     }
 
     .card-link {
@@ -89,12 +90,12 @@ const ProjectCard = ({ demo, description, image, name, url }) => {
             </Card.Link>
           ) : null}
         </Card.Body>
-        <Card.Footer className="text-center">
+        {/* <Card.Footer className="text-center">
           <Card.Link href={url}>
             {"View on GitHub "}
             <Icon icon="icomoon-free:github" />
           </Card.Link>
-        </Card.Footer>
+        </Card.Footer> */}
       </Card>
     </StyledCard>
   );
