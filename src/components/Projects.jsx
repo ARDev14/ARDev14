@@ -43,7 +43,7 @@ const Projects = () => {
       id: 3,
       name: "AI Shoe Analyzer",
       description: "Evaluate your preloved shoes.",
-      image: "http://sorter.thriftops.com/assets/img/expart/expart-2.jpg",
+      image: "https://res.cloudinary.com/drdv5oubz/image/upload/v1728142326/expart-2_hj5w2s.jpg",
       homepage: "http://sorter.thriftops.com/",
       html_url: "http://sorter.thriftops.com/",
     }
