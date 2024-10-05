@@ -33,7 +33,7 @@ const Skills = () => {
             })}
           </Row>
           {resume && (
-            <a href={resume}>
+            <a href={resume} target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 variant={theme === "light" ? "outline-dark" : "outline-light"}
@@ -43,6 +43,7 @@ const Skills = () => {
               </Button>
             </a>
           )}
+
         </Container>
       </section>
     </Element>
