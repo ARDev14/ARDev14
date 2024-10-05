@@ -8,6 +8,7 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import BackToTop from "../components/BackToTop";
+import Services from "../components/services";
 // Config
 import { filteredProjects, moreInfo } from "../config";
 // Utils
@@ -25,6 +26,7 @@ const Home = () => {
     <>
       <Hero name={userData.name} />
       <main>
+        <Services/>
         <AboutMe
           avatar_url={userData.avatar_url}
           bio={userData.bio}
