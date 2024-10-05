@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // State
 import { useSelector } from "react-redux";
 import { selectMode } from "../app/appSlice";
@@ -14,6 +14,17 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import Loading from "./Loading";
 import Title from "./Title";
 import ProjectCard from "./ProjectCard";
+import styled from "styled-components";
+const StyledMessageContainer = styled(Container)`
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 // #region component
 const Projects = () => {
@@ -21,6 +32,16 @@ const Projects = () => {
   const projects = useSelector(selectProjects);
   const mainProjects = useSelector(selectMainProjects);
   const { isLoading, isSuccess, isError, error } = useGetProjectsQuery();
+   // Existing state and variables...
+  const [isVisible, setIsVisible] = useState(false); // New state for visibility
+
+   useEffect(() => {
+     // Set visibility to true after the component mounts
+     const timer = setTimeout(() => {
+       setIsVisible(true);
+     }, 100); // Delay for a smooth transition
+     return () => clearTimeout(timer);
+   }, []);
 
   const nonGithubProjects = [
     {
@@ -98,7 +119,13 @@ const Projects = () => {
                 </Link>
               </Container>
             )} */}
+                <StyledMessageContainer className={`text-center my-4 ${isVisible ? "visible" : ""}`}>
+                  <h5>
+                    Interested in seeing more of my work? Feel free to reach out to me for additional projects!
+                  </h5>
+                </StyledMessageContainer>
           </>
+          
         )}
       </>
     );
